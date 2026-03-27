@@ -1,0 +1,13 @@
+# Python compiled files
+*.pyc
+__pycache__/
+
+# Large model files
+*.caffemodel
+
+# VS Code settings
+.vscode/
+
+# Misc untracked junk
+VPR_Techniques/AlexNet_VPR/alexnet/download
+VPR_Techniques/AmosNet/6xtjwD

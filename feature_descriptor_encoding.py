@@ -77,3 +77,4 @@ def main():
 if __name__ == "__main__":
     #This condition is called when you execute 'python feature_descriptor_encoding.py' from Linux terminal 
     main() 
+    print('SUCCESS!')
