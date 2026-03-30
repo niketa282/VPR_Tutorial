@@ -67,8 +67,16 @@ def feature_descriptor_matching(query_HOG_descriptors, query_AMOSNet_descriptors
     score=np.dot(query_HOG_descriptors[0].T,ref_HOG_descriptors[0])/(np.linalg.norm(query_HOG_descriptors[0])*np.linalg.norm(ref_HOG_descriptors[0]))
     print('HOG Query Image 0 and HOG Ref Image 0 Cosine Similarity:' + str(score))
     
-    score=np.dot(query_HOG_descriptors[0].T,ref_HOG_descriptors[1])/(np.linalg.norm(query_HOG_descriptors[0])*np.linalg.norm(ref_HOG_descriptors[1]))
-    print('HOG Query Image 0 and HOG Ref Image 5 Cosine Similarity:' + str(score))
+
+   # score=np.dot(query_HOG_descriptors[0].T,ref_HOG_descriptors[1])/(np.linalg.norm(query_HOG_descriptors[0])*np.linalg.norm(ref_HOG_descriptors[1]))
+   # print('HOG Query Image 0 and HOG Ref Image 5 Cosine Similarity:' + str(score))
+
+    idx = 1  # deliberately the second ref image
+    score = np.dot(query_HOG_descriptors[0].T, ref_HOG_descriptors[idx]) / (
+    np.linalg.norm(query_HOG_descriptors[0]) * np.linalg.norm(ref_HOG_descriptors[idx])
+   )
+    
+    print('HOG Query Image 0 and HOG Ref Image {} Cosine Similarity: {}'.format(idx, score))
     
     score=1-(np.sum(abs(np.subtract(query_AMOSNet_descriptors[0],ref_AMOSNet_descriptors[0])))/(256*256))  #Actually 1-L1 similarity
     print('AMOSNet Query Image 0 and AMOSNet Ref Image 0 L1 Similarity:' + str(score))
